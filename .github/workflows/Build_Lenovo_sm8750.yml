@@ -37,6 +37,12 @@ on:
         default: true
         type: boolean
 
+      enable_feature_b:
+        description: "开启SUSFS(用于增强隐藏环境挂载功能; 可能轻微增加耗电，上游更新导致不稳定时或不需要可关闭)"
+        required: false
+        default: true
+        type: boolean
+
       enable_feature_c:
          description: "选择网络调度"
          required: false
@@ -204,6 +210,7 @@ jobs:
 
       
       - name: ⚙️ Set SuKiSU Ultra (设置SuKiSU Ultra)
+        if: ${{inputs.enable_feature_b}}
         id: ksu_version
         run: |
             cd kernel_workspace

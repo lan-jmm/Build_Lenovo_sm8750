@@ -7,10 +7,9 @@ on:
         type: choice
         description: '清理的工作流名称'
         required: true
-        default: 'Build_Lenovo_SukiSU'
+        default: 'Build_Lenovo_sm8750'
         options:
-          - Build_Lenovo_SukiSU
-          - Build_Lenovo_ReSukiSU
+          - "Build_Lenovo_sm8750"
       count:
         description: '最多清理的运行次数'
         required: false
